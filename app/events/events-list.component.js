@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var EventsListComponent = (function () {
     function EventsListComponent() {
-        this.event = {
+        this.event1 = {
             id: 1,
             name: 'Angular Connect',
             date: '9/26/2036',
@@ -25,12 +25,15 @@ var EventsListComponent = (function () {
             }
         };
     }
+    EventsListComponent.prototype.handleEventClicked = function (data) {
+        console.log(data);
+    };
     return EventsListComponent;
 }());
 EventsListComponent = __decorate([
     core_1.Component({
         selector: 'events-list',
-        template: "\n    <div>\n        <h1>Upcoming Angular 2 Events</h1>\n    </div>\n    "
+        template: "\n    <div>\n        <h1>Upcoming Angular 2 Events</h1>\n        <hr/>\n        <event-thumbnail [event]='event1' (eventClick)='handleEventClicked($event)'></event-thumbnail>\n    </div>\n    "
     }),
     __metadata("design:paramtypes", [])
 ], EventsListComponent);
