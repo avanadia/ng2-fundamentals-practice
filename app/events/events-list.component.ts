@@ -8,9 +8,15 @@ import { EventThumbnailComponent } from './event-thumbnail.component';
     <div>
         <h1>Upcoming Angular 2 Events</h1>
         <hr/>
-        <event-thumbnail [event]='event1'></event-thumbnail>
+        <div class='well'>
+            Hello World!
+        </div>
+        <event-thumbnail #thumbnail [event]='event1'></event-thumbnail>
     </div>
-    `
+    `,
+    styles: [`
+        .well { color: red; }
+    `]
 })
 
 export class EventsListComponent {
