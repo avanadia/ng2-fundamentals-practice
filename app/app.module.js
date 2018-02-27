@@ -10,11 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var router_1 = require("@angular/router");
 var events_app_component_1 = require("./events-app.component");
 var events_list_component_1 = require("./events/events-list.component");
 var event_thumbnail_component_1 = require("./events/event-thumbnail.component");
 var navbar_component_1 = require("./nav/navbar.component");
 var event_service_1 = require("./events/shared/event.service");
+var toastr_service_1 = require("./common/toastr.service");
+var event_details_component_1 = require("./events/event-details/event-details.component");
+var routes_1 = require("./routes");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,14 +26,18 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
+        imports: [
+            platform_browser_1.BrowserModule,
+            router_1.RouterModule.forRoot(routes_1.appRoutes)
+        ],
         declarations: [
             events_app_component_1.EventsAppComponent,
             events_list_component_1.EventsListComponent,
             event_thumbnail_component_1.EventThumbnailComponent,
-            navbar_component_1.NavBarComponent
+            navbar_component_1.NavBarComponent,
+            event_details_component_1.EventDetailsComponent
         ],
-        providers: [event_service_1.EventService],
+        providers: [event_service_1.EventService, toastr_service_1.ToastrService],
         bootstrap: [events_app_component_1.EventsAppComponent]
     }),
     __metadata("design:paramtypes", [])

@@ -15,6 +15,9 @@ var EventService = (function () {
     EventService.prototype.getEvents = function () {
         return EVENTS;
     };
+    EventService.prototype.getEvent = function (id) {
+        return EVENTS.find(function (event) { return event.id === id; });
+    };
     return EventService;
 }());
 EventService = __decorate([
