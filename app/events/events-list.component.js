@@ -17,7 +17,8 @@ var EventsListComponent = (function () {
         this.toastrService = toastrService;
     }
     EventsListComponent.prototype.ngOnInit = function () {
-        this.events = this.eventService.getEvents();
+        var _this = this;
+        this.eventService.getEvents().subscribe(function (events) { _this.events = events; });
     };
     EventsListComponent.prototype.handleThumbnailClick = function (eventName) {
         this.toastrService.success(eventName);

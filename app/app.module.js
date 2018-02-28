@@ -20,6 +20,8 @@ var toastr_service_1 = require("./common/toastr.service");
 var event_details_component_1 = require("./events/event-details/event-details.component");
 var routes_1 = require("./routes");
 var create_event_component_1 = require("./events/create-event.component");
+var _404_component_1 = require("./errors/404.component");
+var event_route_activator_service_1 = require("./events/event-details/event-route-activator.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,12 +39,24 @@ AppModule = __decorate([
             event_thumbnail_component_1.EventThumbnailComponent,
             navbar_component_1.NavBarComponent,
             event_details_component_1.EventDetailsComponent,
-            create_event_component_1.CreateEventComponent
+            create_event_component_1.CreateEventComponent,
+            _404_component_1.Error404Component
         ],
-        providers: [event_service_1.EventService, toastr_service_1.ToastrService],
+        providers: [
+            event_service_1.EventService,
+            toastr_service_1.ToastrService,
+            event_route_activator_service_1.EventRouteActivator,
+            { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
+        ],
         bootstrap: [events_app_component_1.EventsAppComponent]
     }),
     __metadata("design:paramtypes", [])
 ], AppModule);
 exports.AppModule = AppModule;
+function checkDirtyState(component) {
+    if (component.isDirty) {
+        return window.confirm("You have not saved this event, do you really want to cancel?");
+    }
+    return true;
+}
 //# sourceMappingURL=app.module.js.map
