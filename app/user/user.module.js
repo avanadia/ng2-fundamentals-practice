@@ -7,10 +7,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
 var user_routes_1 = require("./user.routes");
 var profile_component_1 = require("./profile.component");
+var login_component_1 = require("./login.component");
 var UserModule = (function () {
     function UserModule() {
     }
@@ -20,10 +22,12 @@ UserModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            router_1.RouterModule.forChild(user_routes_1.userRoutes)
+            router_1.RouterModule.forChild(user_routes_1.userRoutes),
+            forms_1.FormsModule
         ],
         declarations: [
-            profile_component_1.ProfileComponent
+            profile_component_1.ProfileComponent,
+            login_component_1.LoginComponent
         ],
         providers: []
     })
