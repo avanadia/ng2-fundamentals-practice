@@ -9,13 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var Subject_1 = require("rxjs/Subject");
+var Rx_1 = require("rxjs/Rx");
 var EventService = (function () {
     function EventService() {
     }
     EventService.prototype.getEvents = function () {
-        var subject = new Subject_1.Subject();
-        setTimeout(function () { subject.next(EVENTS); subject.complete(); }, 100);
+        var subject = new Rx_1.Subject();
+        setTimeout(function () { subject.next(EVENTS); subject.complete(); }, 2000);
         return subject;
     };
     EventService.prototype.getEvent = function (id) {

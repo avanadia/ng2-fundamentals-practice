@@ -23,7 +23,7 @@
     "core-js": "2.4.1",
     "ng2f-bootstrap": "^0.0.4",
     "ng2f-server": "^0.2.3",
-    "rxjs": "^5.0.1",
+    "rxjs": "^5.5.6",
     "rxjs-es": "^5.0.0-beta.12",
     "systemjs": "0.19.40",
     "toastr": "^2.1.4",
@@ -34,7 +34,7 @@
     "@types/core-js": "0.9.34",
     "@types/node": "6.0.46",
     "concurrently": "3.2.0",
-    "typescript": "2.1.1"
+    "typescript": "2.3.4"
   },
   "repository": {}
 }
