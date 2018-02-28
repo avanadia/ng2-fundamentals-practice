@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var events_list_component_1 = require("./events/events-list.component");
 var event_details_component_1 = require("./events/event-details/event-details.component");
 var create_event_component_1 = require("./events/create-event.component");

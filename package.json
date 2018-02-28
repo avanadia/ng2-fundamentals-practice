@@ -30,6 +30,7 @@
     "zone.js": "0.8.4"
   },
   "devDependencies": {
+    "@angular/cli": "^1.7.1",
     "@angular/compiler-cli": "^4.0.0",
     "@types/core-js": "0.9.34",
     "@types/node": "6.0.46",
