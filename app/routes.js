@@ -10,6 +10,7 @@ exports.appRoutes = [
     { path: 'events', component: events_list_component_1.EventsListComponent },
     { path: 'events/:id', component: event_details_component_1.EventDetailsComponent, canActivate: [event_route_activator_service_1.EventRouteActivator] },
     { path: '404', component: _404_component_1.Error404Component },
-    { path: '', redirectTo: '/events', pathMatch: 'full' }
+    { path: '', redirectTo: '/events', pathMatch: 'full' },
+    { path: 'user', loadChildren: 'app/user/user.module#UserModule' }
 ];
 //# sourceMappingURL=routes.js.map
