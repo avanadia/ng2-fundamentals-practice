@@ -13,10 +13,26 @@ var core_1 = require("@angular/core");
 var SessionListComponent = /** @class */ (function () {
     function SessionListComponent() {
     }
+    SessionListComponent.prototype.ngOnChanges = function () {
+        // first check if sessions are set
+        if (this.sessions) {
+            this.filterSessions(this.filterBy);
+        }
+    };
+    SessionListComponent.prototype.filterSessions = function (filterValue) {
+        if (filterValue === 'all') {
+        }
+        else {
+        }
+    };
     __decorate([
         core_1.Input(),
         __metadata("design:type", Array)
     ], SessionListComponent.prototype, "sessions", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], SessionListComponent.prototype, "filterBy", void 0);
     SessionListComponent = __decorate([
         core_1.Component({
             selector: 'session-list',
