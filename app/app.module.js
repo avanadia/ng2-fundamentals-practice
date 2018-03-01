@@ -39,7 +39,8 @@ var AppModule = /** @class */ (function () {
                 _404_component_1.Error404Component,
                 index_1.CreateSessionComponent,
                 index_1.SessionListComponent,
-                collapsible_well_component_1.CollaspibleWellComponent
+                collapsible_well_component_1.CollaspibleWellComponent,
+                index_1.DurationPipe
             ],
             providers: [
                 index_1.EventService,
