@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ISession } from '../shared/index';
+import { restrictedWords } from '../shared/restricted-words.validator';
 
 @Component({
     templateUrl: '/app/events/event-details/create-session.component.html',
     styles: [`
     em { float: right; color: #e05c65; padding-left: 10px; }
-    .error input { background-color: #e3c3c5; }
+    .error input, .error select, .error textarea { background-color: #e3c3c5; }
     .error ::-webkit-input-placeholder { color: #999; }
     .error ::-moz-placeholder { color: #999; }
     .error :-moz-placeholder { color: #999; }
@@ -23,13 +24,15 @@ export class CreateSessionComponent implements OnInit {
     duration: FormControl;
     level: FormControl;
     abstract: FormControl;
+    voteres: string[];
 
     ngOnInit() {
         this.name = new FormControl('', Validators.required);
         this.presenter = new FormControl('', Validators.required);
         this.duration = new FormControl('', Validators.required);
         this.level = new FormControl('', Validators.required);
-        this.abstract = new FormControl('', [Validators.required, Validators.maxLength(400)]);
+        this.abstract = new FormControl('', [Validators.required, 
+            Validators.maxLength(400), restrictedWords(['foo','bar'])]);
 
         this.newSessionForm = new FormGroup({
             name: this.name,

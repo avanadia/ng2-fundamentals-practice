@@ -4,4 +4,5 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./event.service"));
+__export(require("./restricted-words.validator"));
 //# sourceMappingURL=index.js.map
