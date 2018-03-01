@@ -19,6 +19,11 @@ var EventService = /** @class */ (function () {
     EventService.prototype.getEvent = function (id) {
         return EVENTS.find(function (event) { return event.id === id; });
     };
+    EventService.prototype.saveEvent = function (event) {
+        event.id = 999;
+        event.sessions = [];
+        EVENTS.push(event);
+    };
     EventService = __decorate([
         core_1.Injectable()
     ], EventService);

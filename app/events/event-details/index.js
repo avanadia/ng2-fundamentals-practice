@@ -5,4 +5,5 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./event-details.component"));
 __export(require("./event-route-activator.service"));
+__export(require("./create-session.component"));
 //# sourceMappingURL=index.js.map
