@@ -39,7 +39,8 @@ var CreateSessionComponent = /** @class */ (function () {
     };
     CreateSessionComponent = __decorate([
         core_1.Component({
-            templateUrl: '/app/events/event-details/create-session.component.html'
+            templateUrl: '/app/events/event-details/create-session.component.html',
+            styles: ["\n    em { float: right; color: #e05c65; padding-left: 10px; }\n    .error input { background-color: #e3c3c5; }\n    .error ::-webkit-input-placeholder { color: #999; }\n    .error ::-moz-placeholder { color: #999; }\n    .error :-moz-placeholder { color: #999; }\n    .error :ms-input-placeholder { color: #999; }\n  "]
         })
     ], CreateSessionComponent);
     return CreateSessionComponent;
