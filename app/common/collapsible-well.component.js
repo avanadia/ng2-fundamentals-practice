@@ -24,7 +24,7 @@ var CollaspibleWellComponent = /** @class */ (function () {
     CollaspibleWellComponent = __decorate([
         core_1.Component({
             selector: 'collapsible-well',
-            template: "\n        <div (click)='toggleContent()' class='well pointable'>\n            <h4 class='well-title'>{{title}}</h4>\n            <ng-content *ngIf='visible'></ng-content>\n        </div>\n    "
+            template: "\n        <div (click)='toggleContent()' class='well pointable'>\n            <h4>\n                <ng-content select='[well-title]'></ng-content>\n            </h4>\n            <ng-content select='[well-body]' *ngIf='visible'></ng-content>\n        </div>\n    "
         })
     ], CollaspibleWellComponent);
     return CollaspibleWellComponent;
