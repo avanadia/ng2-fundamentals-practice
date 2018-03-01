@@ -43,11 +43,11 @@
         <em *ngIf='abstract.invalid && abstract.dirty && abstract?.errors.required'>Required</em>
         <em *ngIf='abstract.invalid && abstract.dirty && abstract?.errors.maxLength'>Cannot exceed 400 characters</em>
         <em *ngIf='abstract.invalid && abstract.dirty && abstract?.errors.restrictedWords'>
-            Restricted Words Found: {{abstract.errors.restrictedWords</em>
+            Restricted Words Found: {{abstract.errors.restrictedWords}}</em>
         <textarea formContorlName='abstract' id="abstract" rows=3 class="form-control" placeholder="abstract..."></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-default">Cancel</button>
+        <button (click)='cancel()' type="button" class="btn btn-default">Cancel</button>
     </form>
 </div>

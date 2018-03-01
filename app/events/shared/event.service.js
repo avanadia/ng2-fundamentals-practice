@@ -24,6 +24,10 @@ var EventService = /** @class */ (function () {
         event.sessions = [];
         EVENTS.push(event);
     };
+    EventService.prototype.updateEvent = function (event) {
+        var index = EVENTS.findIndex(function (x) { return x.id = event.id; });
+        EVENTS[index] = event;
+    };
     EventService = __decorate([
         core_1.Injectable()
     ], EventService);
@@ -99,11 +103,11 @@ var EVENTS = [
         price: 950.00,
         imageUrl: '/app/assets/images/ng-nl.png',
         onlineUrl: 'http://ng-nl.org',
-        //   location: {
-        //     address: 'The NG-NL Convention Center & Scuba Shop',
-        //     city: 'Amsterdam',
-        //     country: 'Netherlands'
-        //   },
+        location: {
+            address: 'The NG-NL Convention Center & Scuba Shop',
+            city: 'Amsterdam',
+            country: 'Netherlands'
+        },
         sessions: [
             {
                 id: 1,

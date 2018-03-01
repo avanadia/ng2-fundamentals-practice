@@ -22,6 +22,11 @@ export class EventService {
       event.sessions = [];
       EVENTS.push(event);
     }
+
+    updateEvent(event) {
+      let index = EVENTS.findIndex(x => x.id = event.id);
+      EVENTS[index] = event;
+    }
     
 }
 
@@ -112,11 +117,11 @@ const EVENTS: IEvent[] = [
       price: 950.00,
       imageUrl: '/app/assets/images/ng-nl.png',
       onlineUrl: 'http://ng-nl.org',
-    //   location: {
-    //     address: 'The NG-NL Convention Center & Scuba Shop',
-    //     city: 'Amsterdam',
-    //     country: 'Netherlands'
-    //   },
+      location: {
+        address: 'The NG-NL Convention Center & Scuba Shop',
+        city: 'Amsterdam',
+        country: 'Netherlands'
+      },
       sessions: [
         {
           id: 1,
