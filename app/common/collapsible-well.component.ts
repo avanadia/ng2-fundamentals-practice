@@ -14,7 +14,6 @@ import { Component, Input } from '@angular/core';
 
 export class CollaspibleWellComponent {
     
-    @Input() title: string;
     visible: boolean = true;
 
     toggleContent() {
