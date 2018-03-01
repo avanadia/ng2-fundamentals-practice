@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Rx_1 = require("rxjs/Rx");
-var EventService = (function () {
+var EventService = /** @class */ (function () {
     function EventService() {
     }
     EventService.prototype.getEvents = function () {
@@ -19,11 +19,11 @@ var EventService = (function () {
     EventService.prototype.getEvent = function (id) {
         return EVENTS.find(function (event) { return event.id === id; });
     };
+    EventService = __decorate([
+        core_1.Injectable()
+    ], EventService);
     return EventService;
 }());
-EventService = __decorate([
-    core_1.Injectable()
-], EventService);
 exports.EventService = EventService;
 var EVENTS = [
     {

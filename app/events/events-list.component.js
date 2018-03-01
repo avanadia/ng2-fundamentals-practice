@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var event_service_1 = require("./shared/event.service");
 var toastr_service_1 = require("../common/toastr.service");
-var EventsListComponent = (function () {
+var EventsListComponent = /** @class */ (function () {
     function EventsListComponent(eventService, toastrService) {
         this.eventService = eventService;
         this.toastrService = toastrService;
@@ -24,13 +24,13 @@ var EventsListComponent = (function () {
     EventsListComponent.prototype.handleThumbnailClick = function (eventName) {
         this.toastrService.success(eventName);
     };
+    EventsListComponent = __decorate([
+        core_1.Component({
+            template: "\n    <div>\n        <h1>Upcoming Angular 2 Events</h1>\n        <hr/>\n        <div class='row'>\n            <div *ngFor='let event of events' class='col-md-5'>\n                <event-thumbnail (click)='handleThumbnailClick(event.name)' [event]='event'></event-thumbnail>\n            </div>\n        </div>\n    </div>\n    "
+        }),
+        __metadata("design:paramtypes", [event_service_1.EventService, toastr_service_1.ToastrService])
+    ], EventsListComponent);
     return EventsListComponent;
 }());
-EventsListComponent = __decorate([
-    core_1.Component({
-        template: "\n    <div>\n        <h1>Upcoming Angular 2 Events</h1>\n        <hr/>\n        <div class='row'>\n            <div *ngFor='let event of events' class='col-md-5'>\n                <event-thumbnail (click)='handleThumbnailClick(event.name)' [event]='event'></event-thumbnail>\n            </div>\n        </div>\n    </div>\n    "
-    }),
-    __metadata("design:paramtypes", [event_service_1.EventService, toastr_service_1.ToastrService])
-], EventsListComponent);
 exports.EventsListComponent = EventsListComponent;
 //# sourceMappingURL=events-list.component.js.map

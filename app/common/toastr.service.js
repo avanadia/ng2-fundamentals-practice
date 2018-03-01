@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var ToastrService = (function () {
+var ToastrService = /** @class */ (function () {
     function ToastrService() {
     }
     ToastrService.prototype.success = function (message, title) {
@@ -22,10 +22,10 @@ var ToastrService = (function () {
     ToastrService.prototype.error = function (message, title) {
         toastr.error(message, title);
     };
+    ToastrService = __decorate([
+        core_1.Injectable()
+    ], ToastrService);
     return ToastrService;
 }());
-ToastrService = __decorate([
-    core_1.Injectable()
-], ToastrService);
 exports.ToastrService = ToastrService;
 //# sourceMappingURL=toastr.service.js.map

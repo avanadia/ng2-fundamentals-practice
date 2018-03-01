@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var event_service_1 = require("../shared/event.service");
-var EventDetailsComponent = (function () {
+var EventDetailsComponent = /** @class */ (function () {
     function EventDetailsComponent(eventService, route) {
         this.eventService = eventService;
         this.route = route;
@@ -20,14 +20,14 @@ var EventDetailsComponent = (function () {
     EventDetailsComponent.prototype.ngOnInit = function () {
         this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
     };
+    EventDetailsComponent = __decorate([
+        core_1.Component({
+            templateUrl: '/app/events/event-details/event-details.component.html',
+            styles: ["\n        .container { padding-left: 20px; padding-right: 20px }\n        .event-image { height: 100px; }\n    "]
+        }),
+        __metadata("design:paramtypes", [event_service_1.EventService, router_1.ActivatedRoute])
+    ], EventDetailsComponent);
     return EventDetailsComponent;
 }());
-EventDetailsComponent = __decorate([
-    core_1.Component({
-        templateUrl: '/app/events/event-details/event-details.component.html',
-        styles: ["\n        .container { padding-left: 20px; padding-right: 20px }\n        .event-image { height: 100px; }\n    "]
-    }),
-    __metadata("design:paramtypes", [event_service_1.EventService, router_1.ActivatedRoute])
-], EventDetailsComponent);
 exports.EventDetailsComponent = EventDetailsComponent;
 //# sourceMappingURL=event-details.component.js.map

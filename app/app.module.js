@@ -15,35 +15,35 @@ var navbar_component_1 = require("./nav/navbar.component");
 var toastr_service_1 = require("./common/toastr.service");
 var routes_1 = require("./routes");
 var _404_component_1 = require("./errors/404.component");
-var AppModule = (function () {
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                router_1.RouterModule.forRoot(routes_1.appRoutes)
+            ],
+            declarations: [
+                events_app_component_1.EventsAppComponent,
+                index_1.EventsListComponent,
+                index_1.EventThumbnailComponent,
+                navbar_component_1.NavBarComponent,
+                index_1.EventDetailsComponent,
+                index_1.CreateEventComponent,
+                _404_component_1.Error404Component
+            ],
+            providers: [
+                index_1.EventService,
+                toastr_service_1.ToastrService,
+                index_1.EventRouteActivator,
+                { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
+            ],
+            bootstrap: [events_app_component_1.EventsAppComponent]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            router_1.RouterModule.forRoot(routes_1.appRoutes)
-        ],
-        declarations: [
-            events_app_component_1.EventsAppComponent,
-            index_1.EventsListComponent,
-            index_1.EventThumbnailComponent,
-            navbar_component_1.NavBarComponent,
-            index_1.EventDetailsComponent,
-            index_1.CreateEventComponent,
-            _404_component_1.Error404Component
-        ],
-        providers: [
-            index_1.EventService,
-            toastr_service_1.ToastrService,
-            index_1.EventRouteActivator,
-            { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
-        ],
-        bootstrap: [events_app_component_1.EventsAppComponent]
-    })
-], AppModule);
 exports.AppModule = AppModule;
 function checkDirtyState(component) {
     if (component.isDirty) {
