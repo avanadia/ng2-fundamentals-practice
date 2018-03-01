@@ -44,7 +44,7 @@ var AppModule = /** @class */ (function () {
             ],
             providers: [
                 index_1.EventService,
-                toastr_service_1.ToastrService,
+                { provide: toastr_service_1.TOAST_TOKEN, useValue: toastr },
                 index_1.EventRouteActivator,
                 { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState },
                 auth_service_1.AuthService

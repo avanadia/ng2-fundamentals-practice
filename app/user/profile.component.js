@@ -8,18 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
 var auth_service_1 = require("./auth.service");
+var toastr_service_1 = require("../common/toastr.service");
 var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent(auth, router) {
+    function ProfileComponent(auth, router, toastr) {
         this.auth = auth;
         this.router = router;
+        this.toastr = toastr;
     }
     ProfileComponent.prototype.ngOnInit = function () {
-        this.firstName = new forms_1.FormControl(this.auth.currentUser.firstName, [forms_1.Validators.required, forms_1.Validators.pattern('[a-zA-Z.*]')]);
+        this.firstName = new forms_1.FormControl(this.auth.currentUser.firstName, [forms_1.Validators.required, forms_1.Validators.pattern('[a-zA-Z].*')]);
         this.lastName = new forms_1.FormControl(this.auth.currentUser.lastName, forms_1.Validators.required);
         this.profileForm = new forms_1.FormGroup({
             firstName: this.firstName,
@@ -32,7 +37,7 @@ var ProfileComponent = /** @class */ (function () {
     ProfileComponent.prototype.saveProfile = function (formValues) {
         if (this.profileForm.valid) {
             this.auth.updateCurrentUser(formValues.firstName, formValues.lastName);
-            this.router.navigate(['events']);
+            this.toastr.success('Profile Saved');
         }
     };
     ProfileComponent.prototype.validateLastName = function () {
@@ -46,7 +51,9 @@ var ProfileComponent = /** @class */ (function () {
             templateUrl: '/app/user/profile.component.html',
             styles: ["\n    em { float: right; color: #e05c65; padding-left: 10px; }\n    .error input { background-color: #e3c3c5; }\n    .error ::-webkit-input-placeholder { color: #999; }\n    .error ::-moz-placeholder { color: #999; }\n    .error :-moz-placeholder { color: #999; }\n    .error :ms-input-placeholder { color: #999; }\n  "]
         }),
-        __metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])
+        __param(2, core_1.Inject(toastr_service_1.TOAST_TOKEN)),
+        __metadata("design:paramtypes", [auth_service_1.AuthService,
+            router_1.Router, Object])
     ], ProfileComponent);
     return ProfileComponent;
 }());

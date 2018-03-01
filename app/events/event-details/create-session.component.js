@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
-var restricted_words_validator_1 = require("../shared/restricted-words.validator");
 var CreateSessionComponent = /** @class */ (function () {
     function CreateSessionComponent() {
         this.saveNewSession = new core_1.EventEmitter();
@@ -22,8 +21,7 @@ var CreateSessionComponent = /** @class */ (function () {
         this.presenter = new forms_1.FormControl('', forms_1.Validators.required);
         this.duration = new forms_1.FormControl('', forms_1.Validators.required);
         this.level = new forms_1.FormControl('', forms_1.Validators.required);
-        this.abstract = new forms_1.FormControl('', [forms_1.Validators.required,
-            forms_1.Validators.maxLength(400), restricted_words_validator_1.restrictedWords(['foo', 'bar'])]);
+        this.abstract = new forms_1.FormControl('', forms_1.Validators.required);
         this.newSessionForm = new forms_1.FormGroup({
             name: this.name,
             presenter: this.presenter,
