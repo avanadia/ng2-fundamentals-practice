@@ -15,6 +15,7 @@ var navbar_component_1 = require("./nav/navbar.component");
 var toastr_service_1 = require("./common/toastr.service");
 var routes_1 = require("./routes");
 var _404_component_1 = require("./errors/404.component");
+var auth_service_1 = require("./user/auth.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -37,7 +38,8 @@ var AppModule = /** @class */ (function () {
                 index_1.EventService,
                 toastr_service_1.ToastrService,
                 index_1.EventRouteActivator,
-                { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
+                { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState },
+                auth_service_1.AuthService
             ],
             bootstrap: [events_app_component_1.EventsAppComponent]
         })
