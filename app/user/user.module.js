@@ -20,8 +20,9 @@ var UserModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
+                forms_1.FormsModule,
+                forms_1.ReactiveFormsModule,
                 router_1.RouterModule.forChild(user_routes_1.userRoutes),
-                forms_1.FormsModule
             ],
             declarations: [
                 profile_component_1.ProfileComponent,
