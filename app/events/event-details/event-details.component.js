@@ -20,7 +20,12 @@ var EventDetailsComponent = (function () {
         this.sortBy = 'votes';
     }
     EventDetailsComponent.prototype.ngOnInit = function () {
-        this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
+        var _this = this;
+        this.route.params.forEach(function (params) {
+            _this.event = _this.eventService.getEvent(+params['id']);
+            // be sure to set add mode back to default
+            _this.addMode = false;
+        });
     };
     EventDetailsComponent.prototype.addSession = function () {
         this.addMode = true;
