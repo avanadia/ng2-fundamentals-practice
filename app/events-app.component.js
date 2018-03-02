@@ -7,16 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var EventsAppComponent = /** @class */ (function () {
+var EventsAppComponent = (function () {
     function EventsAppComponent() {
     }
-    EventsAppComponent = __decorate([
-        core_1.Component({
-            selector: 'events-app',
-            template: "\n    <nav-bar></nav-bar>\n    <router-outlet></router-outlet>\n    "
-        })
-    ], EventsAppComponent);
     return EventsAppComponent;
 }());
+EventsAppComponent = __decorate([
+    core_1.Component({
+        selector: 'events-app',
+        template: "\n    <nav-bar></nav-bar>\n    <router-outlet></router-outlet>\n    "
+    })
+], EventsAppComponent);
 exports.EventsAppComponent = EventsAppComponent;
 //# sourceMappingURL=events-app.component.js.map

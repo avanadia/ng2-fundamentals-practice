@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var DurationPipe = /** @class */ (function () {
+var DurationPipe = (function () {
     function DurationPipe() {
     }
     DurationPipe.prototype.transform = function (value) {
@@ -26,10 +26,10 @@ var DurationPipe = /** @class */ (function () {
         }
         return result;
     };
-    DurationPipe = __decorate([
-        core_1.Pipe({ name: 'duration' })
-    ], DurationPipe);
     return DurationPipe;
 }());
+DurationPipe = __decorate([
+    core_1.Pipe({ name: 'duration' })
+], DurationPipe);
 exports.DurationPipe = DurationPipe;
 //# sourceMappingURL=duration.pipe.js.map

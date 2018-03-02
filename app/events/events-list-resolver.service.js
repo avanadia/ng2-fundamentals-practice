@@ -11,18 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var event_service_1 = require("./shared/event.service");
-var EventListResolver = /** @class */ (function () {
+var EventListResolver = (function () {
     function EventListResolver(eventService) {
         this.eventService = eventService;
     }
     EventListResolver.prototype.resolve = function () {
         return this.eventService.getEvents().map(function (events) { return events; });
     };
-    EventListResolver = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [event_service_1.EventService])
-    ], EventListResolver);
     return EventListResolver;
 }());
+EventListResolver = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [event_service_1.EventService])
+], EventListResolver);
 exports.EventListResolver = EventListResolver;
 //# sourceMappingURL=events-list-resolver.service.js.map
