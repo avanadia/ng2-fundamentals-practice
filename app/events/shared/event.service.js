@@ -28,6 +28,25 @@ var EventService = /** @class */ (function () {
         var index = EVENTS.findIndex(function (x) { return x.id = event.id; });
         EVENTS[index] = event;
     };
+    EventService.prototype.searchSessions = function (searchTerm) {
+        var term = searchTerm.toLocaleLowerCase();
+        var results = [];
+        EVENTS.forEach(function (event) {
+            var matchingSessions = event.sessions.filter(function (session) {
+                return session.name.toLocaleLowerCase().indexOf(term) > -1;
+            });
+            matchingSessions = matchingSessions.map(function (session) {
+                session.eventId = event.id;
+                return session;
+            });
+            results = results.concat(matchingSessions);
+        });
+        var emitter = new core_1.EventEmitter(true);
+        setTimeout(function () {
+            emitter.emit(results);
+        }, 100);
+        return emitter;
+    };
     EventService = __decorate([
         core_1.Injectable()
     ], EventService);
@@ -103,11 +122,11 @@ var EVENTS = [
         price: 950.00,
         imageUrl: '/app/assets/images/ng-nl.png',
         onlineUrl: 'http://ng-nl.org',
-        location: {
-            address: 'The NG-NL Convention Center & Scuba Shop',
-            city: 'Amsterdam',
-            country: 'Netherlands'
-        },
+        // location: {
+        //   address: 'The NG-NL Convention Center & Scuba Shop',
+        //   city: 'Amsterdam',
+        //   country: 'Netherlands'
+        // },
         sessions: [
             {
                 id: 1,
