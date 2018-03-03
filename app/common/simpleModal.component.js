@@ -19,7 +19,9 @@ var SimpleModalComponent = (function () {
         this.$ = $;
     }
     SimpleModalComponent.prototype.closeModal = function () {
-        this.$(this.containerEl.nativeElement).modal('hide');
+        if (this.closeOnBodyClick.toLocaleLowerCase() === 'true') {
+            this.$(this.containerEl.nativeElement).modal('hide');
+        }
     };
     return SimpleModalComponent;
 }());
@@ -31,6 +33,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", String)
 ], SimpleModalComponent.prototype, "elementId", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], SimpleModalComponent.prototype, "closeOnBodyClick", void 0);
 __decorate([
     core_1.ViewChild('modalcontainer'),
     __metadata("design:type", core_1.ElementRef)
