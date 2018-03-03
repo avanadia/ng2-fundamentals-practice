@@ -10,8 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var auth_service_1 = require("../../user/auth.service");
+var voter_service_1 = require("./voter.service");
 var SessionListComponent = /** @class */ (function () {
-    function SessionListComponent() {
+    function SessionListComponent(auth, voterService) {
+        this.auth = auth;
+        this.voterService = voterService;
         this.visibleSessions = [];
     }
     SessionListComponent.prototype.ngOnChanges = function () {
@@ -20,6 +24,20 @@ var SessionListComponent = /** @class */ (function () {
             this.filterSessions(this.filterBy);
             this.sortBy === 'name' ? this.visibleSessions.sort(sortByNameAscending) : this.visibleSessions.sort(sortByVotesDescending);
         }
+    };
+    SessionListComponent.prototype.toggleVote = function (session) {
+        if (this.userHasVoted(session)) {
+            this.voterService.deleteVoter(session, this.auth.currentUser.userName);
+        }
+        else {
+            this.voterService.addVoter(session, this.auth.currentUser.userName);
+        }
+        if (this.sortBy === 'votes') {
+            this.visibleSessions.sort(sortByVotesDescending);
+        }
+    };
+    SessionListComponent.prototype.userHasVoted = function (session) {
+        return this.voterService.userHasVoted(session, this.auth.currentUser.userName);
     };
     SessionListComponent.prototype.filterSessions = function (filterValue) {
         if (filterValue === 'all') {
@@ -49,7 +67,8 @@ var SessionListComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'session-list',
             templateUrl: 'app/events/event-details/session-list.component.html'
-        })
+        }),
+        __metadata("design:paramtypes", [auth_service_1.AuthService, voter_service_1.VoterService])
     ], SessionListComponent);
     return SessionListComponent;
 }());

@@ -41,7 +41,8 @@ var AppModule = /** @class */ (function () {
                 index_2.CollaspibleWellComponent,
                 index_2.SimpleModalComponent,
                 index_2.ModalTriggerDirective,
-                index_1.DurationPipe
+                index_1.DurationPipe,
+                index_1.UpvoteComponent
             ],
             providers: [
                 index_1.EventService,
@@ -49,7 +50,8 @@ var AppModule = /** @class */ (function () {
                 { provide: index_2.JQ_TOKEN, useValue: jQuery },
                 index_1.EventRouteActivator,
                 { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState },
-                auth_service_1.AuthService
+                auth_service_1.AuthService,
+                index_1.VoterService
             ],
             bootstrap: [events_app_component_1.EventsAppComponent]
         })

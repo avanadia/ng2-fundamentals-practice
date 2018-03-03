@@ -12,7 +12,9 @@ import {
     EventRouteActivator,
     CreateSessionComponent,
     SessionListComponent,
-    DurationPipe
+    DurationPipe,
+    UpvoteComponent,
+    VoterService
 } from './events/index';
 import {
     JQ_TOKEN,
@@ -52,7 +54,8 @@ declare let jQuery: Object;
         CollaspibleWellComponent,
         SimpleModalComponent,
         ModalTriggerDirective,
-        DurationPipe
+        DurationPipe,
+        UpvoteComponent
     ],
     providers: [
         EventService,
@@ -60,7 +63,8 @@ declare let jQuery: Object;
         { provide: JQ_TOKEN, useValue: jQuery },
         EventRouteActivator,
         { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState },
-        AuthService
+        AuthService,
+        VoterService
     ],
     bootstrap: [EventsAppComponent]
 })
