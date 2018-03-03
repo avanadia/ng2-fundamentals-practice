@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AuthService = (function () {
+var AuthService = /** @class */ (function () {
     function AuthService() {
     }
     AuthService.prototype.loginUser = function (userName, password) {
@@ -25,10 +25,10 @@ var AuthService = (function () {
         this.currentUser.firstName = firstName;
         this.currentUser.lastName = lastName;
     };
+    AuthService = __decorate([
+        core_1.Injectable()
+    ], AuthService);
     return AuthService;
 }());
-AuthService = __decorate([
-    core_1.Injectable()
-], AuthService);
 exports.AuthService = AuthService;
 //# sourceMappingURL=auth.service.js.map

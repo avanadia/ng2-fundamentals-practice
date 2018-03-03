@@ -7,20 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var CollaspibleWellComponent = (function () {
+var CollaspibleWellComponent = /** @class */ (function () {
     function CollaspibleWellComponent() {
         this.visible = true;
     }
     CollaspibleWellComponent.prototype.toggleContent = function () {
         this.visible = !this.visible;
     };
+    CollaspibleWellComponent = __decorate([
+        core_1.Component({
+            selector: 'collapsible-well',
+            template: "\n        <div (click)='toggleContent()' class='well pointable'>\n            <h4>\n                <ng-content select='[well-title]'></ng-content>\n            </h4>\n            <ng-content select='[well-body]' *ngIf='visible'></ng-content>\n        </div>\n    "
+        })
+    ], CollaspibleWellComponent);
     return CollaspibleWellComponent;
 }());
-CollaspibleWellComponent = __decorate([
-    core_1.Component({
-        selector: 'collapsible-well',
-        template: "\n        <div (click)='toggleContent()' class='well pointable'>\n            <h4>\n                <ng-content select='[well-title]'></ng-content>\n            </h4>\n            <ng-content select='[well-body]' *ngIf='visible'></ng-content>\n        </div>\n    "
-    })
-], CollaspibleWellComponent);
 exports.CollaspibleWellComponent = CollaspibleWellComponent;
 //# sourceMappingURL=collapsible-well.component.js.map

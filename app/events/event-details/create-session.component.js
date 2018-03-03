@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
-var CreateSessionComponent = (function () {
+var CreateSessionComponent = /** @class */ (function () {
     function CreateSessionComponent() {
         this.saveNewSession = new core_1.EventEmitter();
         this.cancelAddSession = new core_1.EventEmitter();
@@ -45,22 +45,22 @@ var CreateSessionComponent = (function () {
     CreateSessionComponent.prototype.cancel = function () {
         this.cancelAddSession.emit();
     };
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], CreateSessionComponent.prototype, "saveNewSession", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], CreateSessionComponent.prototype, "cancelAddSession", void 0);
+    CreateSessionComponent = __decorate([
+        core_1.Component({
+            selector: 'create-session',
+            templateUrl: '/app/events/event-details/create-session.component.html',
+            styles: ["\n    em { float: right; color: #e05c65; padding-left: 10px; }\n    .error input, .error select, .error textarea { background-color: #e3c3c5; }\n    .error ::-webkit-input-placeholder { color: #999; }\n    .error ::-moz-placeholder { color: #999; }\n    .error :-moz-placeholder { color: #999; }\n    .error :ms-input-placeholder { color: #999; }\n  "]
+        })
+    ], CreateSessionComponent);
     return CreateSessionComponent;
 }());
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], CreateSessionComponent.prototype, "saveNewSession", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], CreateSessionComponent.prototype, "cancelAddSession", void 0);
-CreateSessionComponent = __decorate([
-    core_1.Component({
-        selector: 'create-session',
-        templateUrl: '/app/events/event-details/create-session.component.html',
-        styles: ["\n    em { float: right; color: #e05c65; padding-left: 10px; }\n    .error input, .error select, .error textarea { background-color: #e3c3c5; }\n    .error ::-webkit-input-placeholder { color: #999; }\n    .error ::-moz-placeholder { color: #999; }\n    .error :-moz-placeholder { color: #999; }\n    .error :ms-input-placeholder { color: #999; }\n  "]
-    })
-], CreateSessionComponent);
 exports.CreateSessionComponent = CreateSessionComponent;
 //# sourceMappingURL=create-session.component.js.map

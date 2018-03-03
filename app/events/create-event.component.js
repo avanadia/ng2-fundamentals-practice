@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var event_service_1 = require("./shared/event.service");
-var CreateEventComponent = (function () {
+var CreateEventComponent = /** @class */ (function () {
     function CreateEventComponent(router, eventService) {
         this.router = router;
         this.eventService = eventService;
@@ -26,14 +26,14 @@ var CreateEventComponent = (function () {
     CreateEventComponent.prototype.cancel = function () {
         this.router.navigate(['/events']);
     };
+    CreateEventComponent = __decorate([
+        core_1.Component({
+            templateUrl: '/app/events/create-event.component.html',
+            styles: ["\n    em { float: right; color: #e05c65; padding-left: 10px; }\n    .error input { background-color: #e3c3c5; }\n    .error ::-webkit-input-placeholder { color: #999; }\n    .error ::-moz-placeholder { color: #999; }\n    .error :-moz-placeholder { color: #999; }\n    .error :ms-input-placeholder { color: #999; }\n  "]
+        }),
+        __metadata("design:paramtypes", [router_1.Router, event_service_1.EventService])
+    ], CreateEventComponent);
     return CreateEventComponent;
 }());
-CreateEventComponent = __decorate([
-    core_1.Component({
-        templateUrl: '/app/events/create-event.component.html',
-        styles: ["\n    em { float: right; color: #e05c65; padding-left: 10px; }\n    .error input { background-color: #e3c3c5; }\n    .error ::-webkit-input-placeholder { color: #999; }\n    .error ::-moz-placeholder { color: #999; }\n    .error :-moz-placeholder { color: #999; }\n    .error :ms-input-placeholder { color: #999; }\n  "]
-    }),
-    __metadata("design:paramtypes", [router_1.Router, event_service_1.EventService])
-], CreateEventComponent);
 exports.CreateEventComponent = CreateEventComponent;
 //# sourceMappingURL=create-event.component.js.map

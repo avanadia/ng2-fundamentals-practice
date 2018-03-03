@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var EventThumbnailComponent = (function () {
+var EventThumbnailComponent = /** @class */ (function () {
     function EventThumbnailComponent() {
     }
     EventThumbnailComponent.prototype.getStartTimeStyle = function () {
@@ -19,18 +19,18 @@ var EventThumbnailComponent = (function () {
         }
         return {};
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], EventThumbnailComponent.prototype, "event", void 0);
+    EventThumbnailComponent = __decorate([
+        core_1.Component({
+            selector: 'event-thumbnail',
+            template: "\n    <div class='well hoverwell thumbnail' [routerLink]=\"['/events', event.id]\">\n        <h2>{{event?.name | uppercase}}</h2>\n        <div>Date: {{event?.date | date}}</div>\n        <div [ngStyle]='getStartTimeStyle()' [ngSwitch]='event?.time'>\n            Time: {{event?.time}}\n            <span *ngSwitchCase=\"'8:00 am'\">(Early Start)</span>\n            <span *ngSwitchCase=\"'10:00 am'\">(Late Start)</span>\n            <span *ngSwitchDefault>(Normal Start)</span>\n        </div>\n        <div>Price: {{event?.price | currency : 'USD' : true}}</div>\n        <div *ngIf='event?.location'>\n            <span>Location: {{event?.location?.address}}</span>\n            <span class='pad-left'>{{event?.location?.city}}, {{event?.location?.country}}</span>\n        </div>\n        <div *ngIf='event?.onlineUrl'>\n        Online Url: {{ event?.onlineUrl }}\n        </div>\n    </div>\n    ",
+            styles: ["\n        .thumbnail { min-height: 210px; }\n        .pad-left { margin-left: 10px; }\n        .well { color: #bbb; \n            height: 115px; }        \n    "]
+        })
+    ], EventThumbnailComponent);
     return EventThumbnailComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], EventThumbnailComponent.prototype, "event", void 0);
-EventThumbnailComponent = __decorate([
-    core_1.Component({
-        selector: 'event-thumbnail',
-        template: "\n    <div class='well hoverwell thumbnail' [routerLink]=\"['/events', event.id]\">\n        <h2>{{event?.name | uppercase}}</h2>\n        <div>Date: {{event?.date | date}}</div>\n        <div [ngStyle]='getStartTimeStyle()' [ngSwitch]='event?.time'>\n            Time: {{event?.time}}\n            <span *ngSwitchCase=\"'8:00 am'\">(Early Start)</span>\n            <span *ngSwitchCase=\"'10:00 am'\">(Late Start)</span>\n            <span *ngSwitchDefault>(Normal Start)</span>\n        </div>\n        <div>Price: {{event?.price | currency : 'USD' : true}}</div>\n        <div *ngIf='event?.location'>\n            <span>Location: {{event?.location?.address}}</span>\n            <span class='pad-left'>{{event?.location?.city}}, {{event?.location?.country}}</span>\n        </div>\n        <div *ngIf='event?.onlineUrl'>\n        Online Url: {{ event?.onlineUrl }}\n        </div>\n    </div>\n    ",
-        styles: ["\n        .thumbnail { min-height: 210px; }\n        .pad-left { margin-left: 10px; }\n        .well { color: #bbb; \n            height: 115px; }        \n    "]
-    })
-], EventThumbnailComponent);
 exports.EventThumbnailComponent = EventThumbnailComponent;
 //# sourceMappingURL=event-thumbnail.component.js.map

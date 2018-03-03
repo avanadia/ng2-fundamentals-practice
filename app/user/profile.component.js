@@ -17,7 +17,7 @@ var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
 var auth_service_1 = require("./auth.service");
 var toastr_service_1 = require("../common/toastr.service");
-var ProfileComponent = (function () {
+var ProfileComponent = /** @class */ (function () {
     function ProfileComponent(auth, router, toastr) {
         this.auth = auth;
         this.router = router;
@@ -46,16 +46,16 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.validateFirstName = function () {
         return this.firstName.valid || this.firstName.untouched;
     };
+    ProfileComponent = __decorate([
+        core_1.Component({
+            templateUrl: '/app/user/profile.component.html',
+            styles: ["\n    em { float: right; color: #e05c65; padding-left: 10px; }\n    .error input { background-color: #e3c3c5; }\n    .error ::-webkit-input-placeholder { color: #999; }\n    .error ::-moz-placeholder { color: #999; }\n    .error :-moz-placeholder { color: #999; }\n    .error :ms-input-placeholder { color: #999; }\n  "]
+        }),
+        __param(2, core_1.Inject(toastr_service_1.TOAST_TOKEN)),
+        __metadata("design:paramtypes", [auth_service_1.AuthService,
+            router_1.Router, Object])
+    ], ProfileComponent);
     return ProfileComponent;
 }());
-ProfileComponent = __decorate([
-    core_1.Component({
-        templateUrl: '/app/user/profile.component.html',
-        styles: ["\n    em { float: right; color: #e05c65; padding-left: 10px; }\n    .error input { background-color: #e3c3c5; }\n    .error ::-webkit-input-placeholder { color: #999; }\n    .error ::-moz-placeholder { color: #999; }\n    .error :-moz-placeholder { color: #999; }\n    .error :ms-input-placeholder { color: #999; }\n  "]
-    }),
-    __param(2, core_1.Inject(toastr_service_1.TOAST_TOKEN)),
-    __metadata("design:paramtypes", [auth_service_1.AuthService,
-        router_1.Router, Object])
-], ProfileComponent);
 exports.ProfileComponent = ProfileComponent;
 //# sourceMappingURL=profile.component.js.map

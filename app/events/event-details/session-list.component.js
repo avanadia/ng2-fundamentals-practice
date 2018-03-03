@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var SessionListComponent = (function () {
+var SessionListComponent = /** @class */ (function () {
     function SessionListComponent() {
         this.visibleSessions = [];
     }
@@ -33,26 +33,26 @@ var SessionListComponent = (function () {
             });
         }
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], SessionListComponent.prototype, "sessions", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], SessionListComponent.prototype, "filterBy", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], SessionListComponent.prototype, "sortBy", void 0);
+    SessionListComponent = __decorate([
+        core_1.Component({
+            selector: 'session-list',
+            templateUrl: 'app/events/event-details/session-list.component.html'
+        })
+    ], SessionListComponent);
     return SessionListComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], SessionListComponent.prototype, "sessions", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SessionListComponent.prototype, "filterBy", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SessionListComponent.prototype, "sortBy", void 0);
-SessionListComponent = __decorate([
-    core_1.Component({
-        selector: 'session-list',
-        templateUrl: 'app/events/event-details/session-list.component.html'
-    })
-], SessionListComponent);
 exports.SessionListComponent = SessionListComponent;
 function sortByNameAscending(s1, s2) {
     if (s1.name > s2.name) {

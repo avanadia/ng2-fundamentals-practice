@@ -14,7 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var jQuery_service_1 = require("./jQuery.service");
-var ModalTriggerDirective = (function () {
+var ModalTriggerDirective = /** @class */ (function () {
     function ModalTriggerDirective(ref, $) {
         this.ref = ref;
         this.$ = $;
@@ -27,18 +27,18 @@ var ModalTriggerDirective = (function () {
             _this.$("#" + _this.modalId).modal({});
         });
     };
+    __decorate([
+        core_1.Input('modal-trigger'),
+        __metadata("design:type", String)
+    ], ModalTriggerDirective.prototype, "modalId", void 0);
+    ModalTriggerDirective = __decorate([
+        core_1.Directive({
+            selector: '[modal-trigger]'
+        }),
+        __param(1, core_1.Inject(jQuery_service_1.JQ_TOKEN)),
+        __metadata("design:paramtypes", [core_1.ElementRef, Object])
+    ], ModalTriggerDirective);
     return ModalTriggerDirective;
 }());
-__decorate([
-    core_1.Input('modal-trigger'),
-    __metadata("design:type", String)
-], ModalTriggerDirective.prototype, "modalId", void 0);
-ModalTriggerDirective = __decorate([
-    core_1.Directive({
-        selector: '[modal-trigger]'
-    }),
-    __param(1, core_1.Inject(jQuery_service_1.JQ_TOKEN)),
-    __metadata("design:paramtypes", [core_1.ElementRef, Object])
-], ModalTriggerDirective);
 exports.ModalTriggerDirective = ModalTriggerDirective;
 //# sourceMappingURL=modalTrigger.directive.js.map
