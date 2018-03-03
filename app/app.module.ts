@@ -14,7 +14,8 @@ import {
     SessionListComponent,
     DurationPipe,
     UpvoteComponent,
-    VoterService
+    VoterService,
+    LocationValidator
 } from './events/index';
 import {
     JQ_TOKEN,
@@ -54,6 +55,7 @@ declare let jQuery: Object;
         CollaspibleWellComponent,
         SimpleModalComponent,
         ModalTriggerDirective,
+        LocationValidator,
         DurationPipe,
         UpvoteComponent
     ],

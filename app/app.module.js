@@ -41,6 +41,7 @@ var AppModule = /** @class */ (function () {
                 index_2.CollaspibleWellComponent,
                 index_2.SimpleModalComponent,
                 index_2.ModalTriggerDirective,
+                index_1.LocationValidator,
                 index_1.DurationPipe,
                 index_1.UpvoteComponent
             ],
