@@ -7,9 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
 var LocationValidator = /** @class */ (function () {
     function LocationValidator() {
     }
+    LocationValidator_1 = LocationValidator;
     LocationValidator.prototype.validate = function (formGroup) {
         var addressControl = formGroup.controls['address'];
         var cityControl = formGroup.controls['city'];
@@ -26,12 +28,14 @@ var LocationValidator = /** @class */ (function () {
             return { validateLocation: false };
         }
     };
-    LocationValidator = __decorate([
+    LocationValidator = LocationValidator_1 = __decorate([
         core_1.Directive({
             selector: '[validateLocation]',
+            providers: [{ provide: forms_1.NG_VALIDATORS, useExisting: LocationValidator_1, multi: true }]
         })
     ], LocationValidator);
     return LocationValidator;
+    var LocationValidator_1;
 }());
 exports.LocationValidator = LocationValidator;
 //# sourceMappingURL=location-validator.directive.js.map
