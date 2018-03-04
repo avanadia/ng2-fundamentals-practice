@@ -35,10 +35,18 @@ var ProfileComponent = /** @class */ (function () {
         this.router.navigate(['events']);
     };
     ProfileComponent.prototype.saveProfile = function (formValues) {
+        var _this = this;
         if (this.profileForm.valid) {
-            this.auth.updateCurrentUser(formValues.firstName, formValues.lastName);
-            this.toastr.success('Profile Saved');
+            this.auth.updateCurrentUser(formValues.firstName, formValues.lastName).subscribe(function () {
+                _this.toastr.success('Profile Saved');
+            });
         }
+    };
+    ProfileComponent.prototype.logout = function () {
+        var _this = this;
+        this.auth.logout().subscribe(function () {
+            _this.router.navigate(['/user/login']);
+        });
     };
     ProfileComponent.prototype.validateLastName = function () {
         return this.lastName.valid || this.lastName.untouched;
