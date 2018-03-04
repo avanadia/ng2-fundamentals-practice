@@ -5,13 +5,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var core_1 = require("@angular/core");
-var auth_service_1 = require("../../user/auth.service");
-var voter_service_1 = require("./voter.service");
 var SessionListComponent = /** @class */ (function () {
     function SessionListComponent(auth, voterService) {
         this.auth = auth;
@@ -52,27 +47,22 @@ var SessionListComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        core_1.Input(),
-        __metadata("design:type", Array)
-    ], SessionListComponent.prototype, "sessions", void 0);
+        core_1.Input()
+    ], SessionListComponent.prototype, "sessions");
     __decorate([
-        core_1.Input(),
-        __metadata("design:type", String)
-    ], SessionListComponent.prototype, "filterBy", void 0);
+        core_1.Input()
+    ], SessionListComponent.prototype, "filterBy");
     __decorate([
-        core_1.Input(),
-        __metadata("design:type", String)
-    ], SessionListComponent.prototype, "sortBy", void 0);
+        core_1.Input()
+    ], SessionListComponent.prototype, "sortBy");
     __decorate([
-        core_1.Input(),
-        __metadata("design:type", Number)
-    ], SessionListComponent.prototype, "eventId", void 0);
+        core_1.Input()
+    ], SessionListComponent.prototype, "eventId");
     SessionListComponent = __decorate([
         core_1.Component({
             selector: 'session-list',
             templateUrl: 'app/events/event-details/session-list.component.html'
-        }),
-        __metadata("design:paramtypes", [auth_service_1.AuthService, voter_service_1.VoterService])
+        })
     ], SessionListComponent);
     return SessionListComponent;
 }());
@@ -96,4 +86,3 @@ function sortByVotesDescending(s1, s2) {
     * */
     return s2.voters.length - s1.voters.length;
 }
-//# sourceMappingURL=session-list.component.js.map
