@@ -51,10 +51,11 @@ var AppModule = /** @class */ (function () {
                 index_1.EventService,
                 { provide: index_2.TOAST_TOKEN, useValue: toastr },
                 { provide: index_2.JQ_TOKEN, useValue: jQuery },
-                index_1.EventRouteActivator,
                 { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState },
                 auth_service_1.AuthService,
-                index_1.VoterService
+                index_1.VoterService,
+                index_1.EventResolver,
+                index_1.EventListResolver
             ],
             bootstrap: [events_app_component_1.EventsAppComponent]
         })

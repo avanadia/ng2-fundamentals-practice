@@ -11,22 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var event_service_1 = require("./shared/event.service");
-var router_1 = require("@angular/router");
-var EventsListComponent = /** @class */ (function () {
-    function EventsListComponent(eventService, route) {
+var EventResolver = /** @class */ (function () {
+    function EventResolver(eventService) {
         this.eventService = eventService;
-        this.route = route;
     }
-    EventsListComponent.prototype.ngOnInit = function () {
-        this.events = this.route.snapshot.data['events'];
+    EventResolver.prototype.resolve = function (route) {
+        return this.eventService.getEvent(route.params['id']);
     };
-    EventsListComponent = __decorate([
-        core_1.Component({
-            template: "\n    <div>\n        <h1>Upcoming Angular 2 Events</h1>\n        <hr/>\n        <div class='row'>\n            <div *ngFor='let event of events' class='col-md-5'>\n                <event-thumbnail [event]='event'></event-thumbnail>\n            </div>\n        </div>\n    </div>\n    "
-        }),
-        __metadata("design:paramtypes", [event_service_1.EventService, router_1.ActivatedRoute])
-    ], EventsListComponent);
-    return EventsListComponent;
+    EventResolver = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [event_service_1.EventService])
+    ], EventResolver);
+    return EventResolver;
 }());
-exports.EventsListComponent = EventsListComponent;
-//# sourceMappingURL=events-list.component.js.map
+exports.EventResolver = EventResolver;
+//# sourceMappingURL=event-resolver.service.js.map

@@ -22,7 +22,9 @@ var EventService = /** @class */ (function () {
         }).catch(this.handleError);
     };
     EventService.prototype.getEvent = function (id) {
-        return EVENTS.find(function (event) { return event.id === id; });
+        return this.http.get('/api/events/' + id).map(function (response) {
+            return response.json();
+        }).catch(this.handleError);
     };
     EventService.prototype.saveEvent = function (event) {
         event.id = 999;

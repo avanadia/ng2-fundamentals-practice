@@ -21,9 +21,8 @@ var EventDetailsComponent = /** @class */ (function () {
     }
     EventDetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params.forEach(function (params) {
-            _this.event = _this.eventService.getEvent(+params['id']);
-            // be sure to set add mode back to default
+        this.route.data.forEach(function (data) {
+            _this.event = data['event'];
             _this.addMode = false;
         });
     };
